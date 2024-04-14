@@ -1,10 +1,11 @@
-import { Box, Typography } from "@mui/material";
+"use client";
+
+import { Box } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
-import colors from "../utils/colors";
 import TextLabel from "./TextLabel";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;

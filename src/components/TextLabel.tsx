@@ -1,4 +1,4 @@
-import colors from "../utils/colors";
+import colors from "../utils/colors.util";
 import { Typography, TypographyProps } from "@mui/material";
 
 interface TextProps extends TypographyProps {}

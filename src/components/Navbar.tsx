@@ -1,5 +1,7 @@
+"use client";
+
 import { Box, Container, Typography } from "@mui/material";
-import colors from "../utils/colors";
+import colors from "../utils/colors.util";
 
 export default function Navbar() {
   return (
