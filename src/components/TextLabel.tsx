@@ -9,8 +9,8 @@ export default function TextLabel({ children, ...props }: TextProps) {
       fontWeight="bold"
       textTransform="uppercase"
       letterSpacing={1}
-      color={colors.label}
-      fontSize={14}
+      color={colors.defaultText}
+      fontSize={16}
       {...props}
     >
       {children}
