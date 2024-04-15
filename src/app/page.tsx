@@ -1,4 +1,5 @@
 import { getOrders, getSessions } from "@/actions/session.action";
+import Dashboard from "@/components/Dashboard";
 import { aggregateData } from "@/utils/data.util";
 
 export const metadata = {
@@ -9,9 +10,7 @@ export const metadata = {
 export default async function Home() {
   const orders = await getOrders();
   const sessions = await getSessions();
-
   const data = aggregateData(orders, sessions);
-  console.log(data);
 
-  return <div>hello page</div>;
+  return <Dashboard aggregateData={data} />;
 }

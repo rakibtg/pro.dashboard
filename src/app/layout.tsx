@@ -5,6 +5,9 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import Navbar from "@/components/Navbar";
 import { Box, Container, Grid } from "@mui/material";
 import Sidebar from "@/components/Sidebar";
+import { DataProvider } from "@/providers/data.provider";
+import { FilterProvider } from "@/providers/filters.provider";
+import { ReportProvider } from "@/providers/reports.provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,18 +25,23 @@ export default function RootLayout({
     <html lang="en">
       <AppRouterCacheProvider>
         <body className={inter.className}>
-          <Navbar />
-          <Container maxWidth="lg">
-            {" "}
-            <Grid container columnSpacing={2} height="calc(100vh - 80px)">
-              <Grid item xs={4}>
-                <Sidebar />
-              </Grid>
-              <Grid item xs={8}>
-                <Box height="100%">{children}</Box>
-              </Grid>
-            </Grid>
-          </Container>
+          <DataProvider>
+            <FilterProvider>
+              <Navbar />
+              <Container maxWidth="lg">
+                <Grid container columnSpacing={2} height="calc(100vh - 80px)">
+                  <Grid item xs={12} md={4}>
+                    <Sidebar />
+                  </Grid>
+                  <Grid item xs={12} md={8}>
+                    <ReportProvider>
+                      <Box height="100%">{children}</Box>
+                    </ReportProvider>
+                  </Grid>
+                </Grid>
+              </Container>
+            </FilterProvider>
+          </DataProvider>
         </body>
       </AppRouterCacheProvider>
     </html>
