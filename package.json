@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 6042",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "test": "vitest"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
@@ -15,14 +15,20 @@
     "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
     "@mui/material-nextjs": "^5.15.11",
+    "@mui/x-charts": "^7.2.0",
     "next": "14.2.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "vite-tsconfig-paths": "^4.3.2"
   },
   "devDependencies": {
+    "@testing-library/react": "^15.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "typescript": "^5"
+    "@vitejs/plugin-react": "^4.2.1",
+    "jsdom": "^24.0.0",
+    "typescript": "^5",
+    "vitest": "^1.5.0"
   }
 }
