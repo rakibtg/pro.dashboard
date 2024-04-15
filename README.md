@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+To run the development server: (assuming you installed packages first)
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Video Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+A quick demo video of this application can be found here: https://pro-dashboard-olive.vercel.app/demo.mp4
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- Filter data for a specific channel, channel group or campaign.
+- Bar chart to visalise gross sales per channel.
+- Data table to display the filtered data.
+- Data aggregated on
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  - Channel
+  - Channel Group
+  - Campaign
+  - Total Orders
+  - Total Visits
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  to show the gross sales, number of orders and number of visits for each row.
 
-## Deploy on Vercel
+- Ability to sort by any column in the data table.
+- Client side pagination for the data table.
+- Responsive design for mobile and desktop.
+- Unique query string for each filter to allow for sharing of the dashboard. Find out here: [example dashboard](https://pro-dashboard-olive.vercel.app/?channelFilters=%5B%7B%22title%22%3A%22facebook%22%2C%22value%22%3A%22facebook%22%7D%2C%7B%22title%22%3A%22instagram%22%2C%22value%22%3A%22instagram%22%7D%2C%7B%22title%22%3A%22youtube%22%2C%22value%22%3A%22youtube%22%7D%2C%7B%22title%22%3A%22duckduckgo%22%2C%22value%22%3A%22duckduckgo%22%7D%2C%7B%22title%22%3A%22twitter%22%2C%22value%22%3A%22twitter%22%7D%5D&campaignFilters=%5B%5D&channelGroupFilters=%5B%5D).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next.js
+- React
+- TypeScript
+- MUI (Material UI)
+- Vitest
+
+## Backend
+
+- Utilising the Next.js action feature to fetch data from the remote url and then directly pass it to the client.
+- The data is then stored in the local state of the client and used to render the dashboard using react context.
+- Added simple example of component testing.
+
+## Deployment
+
+- Deployed on Vercel.
+- On push to the main branch, the application is automatically deployed to Vercel.
